@@ -43,7 +43,7 @@ void measure()
     static unsigned long timeStamp;
     if (millis() - timeStamp >= PERIOD_PUBLISH_PARTICLE || timeStamp == 0)
     {
-        timeStamp = millis();        
+        timeStamp = millis();
         // Put regular event to the queue
         particleQueue.enqueue("RSSI", String(WiFi.RSSI()));
     }

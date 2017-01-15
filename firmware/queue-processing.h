@@ -15,7 +15,7 @@
   CREDENTIALS:
   Author: Libor Gabaj
   GitHub: https://github.com/mrkalePhotonLib/QueueProcessing.git
-  
+
   CREDITS:
   - Tiago Andrade e Silva: Library PublishQueue
     (https://github.com/tiagonmas/publishqueue-library-spark.git)
@@ -108,7 +108,7 @@ public:
   DESCRIPTION:
   The method returns the top (front) event and removes it from the queue.
   - This method is intended for one time usage of queued event.
-  
+
   PARAMETERS: none
 
   RETURN:
@@ -171,7 +171,7 @@ public:
   PARAMETERS: none
 
   RETURN:
-  The scope flag of an event, either QUEUEPROCESSING_PUBLISH_PUBLIC or 
+  The scope flag of an event, either QUEUEPROCESSING_PUBLISH_PUBLIC or
   QUEUEPROCESSING_PUBLISH_PRIVATE.
 */
   uint8_t peekScope();
@@ -202,7 +202,7 @@ public:
     Particle Cloud, the method leaves particular event in the queue and
     tries to publish it in the next run. Otherwise at successful publishing
     the method removes that event from the queue.
-  
+
   PARAMETERS: none
 
   RETURN:

@@ -9,7 +9,7 @@ void QueueProcessing::enqueue(String eventName, String eventText, uint8_t eventS
     // Sanitize event name and text
     eventName = eventName.substring(0, 63);
     eventText = eventText.substring(0, 255);
-    
+
     // Sanitize scope
     switch (eventScope)
     {
@@ -20,9 +20,9 @@ void QueueProcessing::enqueue(String eventName, String eventText, uint8_t eventS
             eventScope = QUEUEPROCESSING_PUBLISH_PRIVATE;
             break;
     }
-    
+
     QueueProcessingEvent event = {.name = eventName, .text = eventText, .scope = eventScope};
-    _queue.push(event);    
+    _queue.push(event);
 }
 
 // Enqueue event by structure
