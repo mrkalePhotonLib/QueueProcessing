@@ -1,0 +1,7 @@
+{
+  "name": "QueueProcessing",
+  "author": "Libor Gabaj <libor.gabaj@gmail.com>",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "Library for processing Particle events by a C++ standard queue, especially publishing them without exceeding cloud publishing frequency"
+}
