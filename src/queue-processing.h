@@ -25,7 +25,7 @@
 
 #define QUEUEPROCESSING_VERSION "QueueProcessing 1.0.0"
 
-#include "Particle.h"
+#include <Particle.h>
 #include <queue>
 
 #define QUEUEPROCESSING_PUBLISH_PUBLIC  0       // The value determining public event
@@ -52,7 +52,7 @@ public:
 //-------------------------------------------------------------------------
 
 /*
-  Constructor
+  Constructor.
 
   DESCRIPTION:
     Constructor creates a class instance object. It initially uses all
@@ -67,7 +67,7 @@ public:
 
 
 /*
-  Put an event to the queue
+  Put an event to the queue.
 
   DESCRIPTION:
   The method puts the event with input parameters to the queue. The method
@@ -103,7 +103,7 @@ public:
 
 
 /*
-  Get the top event and remove it from the queue
+  Get the top event and remove it from the queue.
 
   DESCRIPTION:
   The method returns the top (front) event and removes it from the queue.
@@ -118,7 +118,7 @@ public:
 
 
 /*
-  Get the top event from the queue without removing it
+  Get the top event from the queue without removing it.
 
   DESCRIPTION:
   The method returns the top (front) event but leaves it in the queue intact.
@@ -132,7 +132,7 @@ public:
 
 
 /*
-  Get the name of a top event in the queue
+  Get the name of a top event in the queue.
 
   DESCRIPTION:
   The method returns the name of top (front) event but leaves the event
@@ -141,13 +141,13 @@ public:
   PARAMETERS: none
 
   RETURN:
-  The pointer to the name of an event
+  The pointer to the name of an event.
 */
   String peekName();
 
 
 /*
-  Get the text of a top event in the queue
+  Get the text of a top event in the queue.
 
   DESCRIPTION:
   The method returns the text of top (front) event but leaves the event
@@ -156,13 +156,13 @@ public:
   PARAMETERS: none
 
   RETURN:
-  The content of an event
+  The content of an event.
 */
   String peekText();
 
 
 /*
-  Get the scope of a top event in the queue
+  Get the scope of a top event in the queue.
 
   DESCRIPTION:
   The method returns the flag about scope of top (front) event but leaves
@@ -178,7 +178,7 @@ public:
 
 
 /*
-  Clear the queue by removing all its events
+  Clear the queue by removing all its events.
 
   DESCRIPTION:
   The method removes all event currently stored in the queue and makes it empty.
@@ -191,7 +191,7 @@ public:
 
 
 /*
-  Publish the top event in the queue
+  Publish the top event in the queue.
 
   DESCRIPTION:
   The method publishes one event at the front of the queue to the Particle
@@ -206,13 +206,13 @@ public:
   PARAMETERS: none
 
   RETURN:
-  The success flag
+  The success flag.
 */
   bool publish();
 
 
 /*
-  Publish the batch of top events in the queue
+  Publish the batch of top events in the queue.
 
   DESCRIPTION:
   The method publishes maximal batch number of front events in the queue
@@ -223,7 +223,7 @@ public:
   PARAMETERS: none
 
   RETURN:
-  The success flag
+  The success flag.
 */
   bool publishBatch();
 
@@ -233,7 +233,7 @@ public:
 //-------------------------------------------------------------------------
 
 /*
-  Set publishing period in milliseconds
+  Set publishing period in milliseconds.
 
   DESCRIPTION:
   The method defines the publishing period for publishing individual events.
@@ -251,7 +251,7 @@ public:
 
 
 /*
-  Set number of events in a publishing batch
+  Set number of events in a publishing batch.
 
   DESCRIPTION:
   The method defines the count of events that should be published at once
@@ -273,7 +273,7 @@ public:
 //-------------------------------------------------------------------------
 
 /*
-  Get flag whether the queue is empty
+  Get flag whether the queue is empty.
 
   DESCRIPTION:
   The method returns the flag whether the queue is empty.
@@ -281,7 +281,7 @@ public:
   PARAMETERS: none
 
   RETURN:
-  The flag whether the queue is empty
+  The flag whether the queue is empty.
 */
   bool isEmpty();
 
@@ -296,7 +296,7 @@ public:
   PARAMETERS: none
 
   RETURN:
-  The number of events in the queue
+  The number of events in the queue.
 */
   uint16_t getQueueLen();
 

@@ -1,6 +1,6 @@
 /*
   NAME:
-  Basic usage of QueueProcessing library
+  Basic usage of QueueProcessing library.
 
   DESCRIPTION:
   This sketch demonstrates the basic usage of the library.
@@ -10,6 +10,8 @@
     sketch does not recognizes them.
   * For demonstration purposes the used measuring period is long and each
     measured data point is displayed.
+  * The first events 4 events are queued instantly and displayed in 1 second
+    periods, then further events in measurement periods.
 
   LICENSE:
   This program is free software; you can redistribute it and/or modify
@@ -19,10 +21,10 @@
   Author: Libor Gabaj
 */
 
-#include "queue-processing/queue-processing.h"
-#define SKETCH "QUEUEPROCESSING 1.0.0"
+#include <queue-processing.h>
+#define SKETCH "QUEUE-PROCESSING 1.0.0"
 
-const unsigned int PERIOD_PUBLISH_PARTICLE = 10000;   // Milliseconds
+const unsigned int PERIOD_PUBLISH_PARTICLE = 3000;   // Milliseconds
 QueueProcessing particleQueue;
 
 void setup()
@@ -35,7 +37,7 @@ void setup()
 void loop()
 {
   measure();                // Prepare events to the queue
-  particleQueue.publish();  // Publish events to the Particle Cloud
+  particleQueue.publish();  // Publish events to the Particle Cloud evenly
 }
 
 void measure()

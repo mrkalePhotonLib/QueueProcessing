@@ -1,7 +1,8 @@
-#include "queue-processing.h"
+#include <queue-processing.h>
 
 // Constructor
 QueueProcessing::QueueProcessing() {}
+
 
 // Enqueue event by parameters
 void QueueProcessing::enqueue(String eventName, String eventText, uint8_t eventScope)
@@ -25,11 +26,13 @@ void QueueProcessing::enqueue(String eventName, String eventText, uint8_t eventS
     _queue.push(event);
 }
 
+
 // Enqueue event by structure
 void QueueProcessing::enqueue(QueueProcessingEvent event)
 {
     enqueue(event.name, event.text, event.scope);
 }
+
 
 QueueProcessingEvent QueueProcessing::dequeue()
 {
@@ -39,11 +42,13 @@ QueueProcessingEvent QueueProcessing::dequeue()
     return event;
 }
 
+
 // Get top event without removing it
 QueueProcessingEvent QueueProcessing::peek()
 {
     return _queue.front();
 }
+
 
 String QueueProcessing::peekName()
 {
@@ -52,12 +57,14 @@ String QueueProcessing::peekName()
     return event.name;
 }
 
+
 String QueueProcessing::peekText()
 {
     QueueProcessingEvent event;
     event = _queue.front();
     return event.text;
 }
+
 
 uint8_t QueueProcessing::peekScope()
 {
@@ -66,10 +73,12 @@ uint8_t QueueProcessing::peekScope()
     return event.scope;
 }
 
+
 void QueueProcessing::clear()
 {
     _queue = std::queue<QueueProcessingEvent>();
 }
+
 
 //  Publish the top event to the Particle Cloud
 bool QueueProcessing::publish()
@@ -98,6 +107,7 @@ bool QueueProcessing::publish()
     }
     return true;
 }
+
 
 //  Publish batch of top event to the Particle Cloud
 bool QueueProcessing::publishBatch()
@@ -146,6 +156,7 @@ void QueueProcessing::setPublishPeriod(uint16_t period)
 {
     _publishPeriod = max(period, QUEUEPROCESSING_PUBLISH_PERIOD_MIN);
 }
+
 
 void QueueProcessing::setPublishBatch(uint8_t number)
 {
